@@ -14,6 +14,8 @@ import java.util.Map;
 public class Register {
 
     private String id;
+
+
     private String password;
     private String username;
     private String email;

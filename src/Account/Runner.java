@@ -87,6 +87,8 @@ public class Runner {
         exit = true;
     }
 
+
+
     public static void register() {
         System.out.println("=========== New User Register ===========");
         System.out.println("Username:\nminimum 6 characters, not start a number, no special character");

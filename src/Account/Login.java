@@ -11,6 +11,7 @@ public class Login {
         if (Utility.isFileExists(usernameOrEmail, Register.fileExtension)) {
             return Utility.getId(usernameOrEmail, Register.fileExtension, passwordEncoded);
         } else {
+
             return null;
         }
     }
