@@ -45,6 +45,19 @@ public class Utility {
     }
 
     // https://en.wikipedia.org/wiki/Email_address
+
+
+    public static String passwordValidator(String password) {
+        String errorMessage = "";
+        if (password.length() < 8) errorMessage += " only one dot is allowed /";
+        else if (password.replaceAll("[^A-Z]", "").length() == 0) errorMessage += " only one dot is allowed /";
+        else if (password.replaceAll("[^a-z]", "").length() == 0) errorMessage += " only one dot is allowed /";
+        else if (password.replaceAll("[^0-9]", "").length() == 0) errorMessage += " only one dot is allowed /";
+        else if (password.replaceAll("[^@#$%.<>,&+=]", "").length() == 0) errorMessage += " only one dot is allowed /";
+
+        return errorMessage;
+    }
+
     public static String emailValidator(String inputEmail) {
         String localPart = "", domain = "", domainExtension = "";
         String errorMessage = "";
@@ -67,17 +80,6 @@ public class Utility {
         else if (localPart.charAt(localPart.length() - 1) == '.') errorMessage += " last character cannot be a dot /";
         else if (inputEmail.contains(" ")) errorMessage += " mail address cannot have spaces /";
         else if (domainExtension.length() < 2) errorMessage += " mail address extension not correct /";
-        return errorMessage;
-    }
-
-    public static String passwordValidator(String password) {
-        String errorMessage = "";
-        if (password.length() < 8) errorMessage += " only one dot is allowed /";
-        else if (password.replaceAll("[^A-Z]", "").length() == 0) errorMessage += " only one dot is allowed /";
-        else if (password.replaceAll("[^a-z]", "").length() == 0) errorMessage += " only one dot is allowed /";
-        else if (password.replaceAll("[^0-9]", "").length() == 0) errorMessage += " only one dot is allowed /";
-        else if (password.replaceAll("[^@#$%.<>,&+=]", "").length() == 0) errorMessage += " only one dot is allowed /";
-
         return errorMessage;
     }
 
